@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+	double x, xp, xk, dx, A, B, y;
+
+	cout << " xp = "; cin >> xp;
+	cout << " xk = "; cin >> xk;
+	cout << "dx = "; cin >> dx;
+
+	cout << fixed;
+	cout << "--------------" << endl;
+	cout << "|" << setw(4) << "x" << "|" << setw(6) << "y" << "|" << endl;
+	cout << "-----------------" << endl;
+	x = xp;
+	A = sin(x);
+
+	while (x <= xk)
+	{
+		if (x < (-1))
+			B = sqrt(abs(1 - x)) - cos(8 * x);
+		else
+			if (-1 <= x <= 0.4)
+				B = atan(x) - sqrt(pow(4 - x, 5));
+			else
+					B = exp(sin(x / 2)) + log(sin(x) + 2);
+		y = A + B;
+		cout << "|" << setw(7) << setprecision(2) << x
+			<< "|" << setw(10) << setprecision(3) << y
+			<< " |" << endl;
+		x += dx;
+
+	}
+	cout << "------------------" << endl;
+	return 0;
+}
